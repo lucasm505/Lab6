@@ -6,7 +6,7 @@ def encoder(password):
     #variables
     encoded_password = ""
     list_digits = []
-    original_password = password
+    original_password = str(password)
 
     #puts all numbers in password into list to make them easily iterable
     while password > 0:
@@ -17,7 +17,7 @@ def encoder(password):
     for digits in list_digits:
         encoded_password += str(digits + 3)
 
-    return int(encoded_password)
+    return encoded_password
 
 
 if __name__ == "__main__":
