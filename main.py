@@ -5,22 +5,14 @@
 def encoder(password):
     #variables
     encoded_password = ""
-    list_digits = []
     original_password = str(password)
-
-    #puts all numbers in password into list to make them easily iterable
-    while password > 0:
-        list_digits.insert(0, password % 10)
-        password = (password - password % 10) // 10
-
     
     #iterates through each number in password and increases by 3
-    for digits in list_digits:
-        var = 0
-        var += (digits + 3)
-        if var > 10:
-            var -= 10
-        encoded_password += str(var)
+    for digits in (password):
+        new_num = (int(digits) + 3)
+        if new_num >= 10:
+            new_num = (int(new_num) - 10)
+        encoded_password += str(new_num)
 
     return encoded_password
     
@@ -41,7 +33,7 @@ def main():
 
         if menu_option == 1:
             password = input("Please enter your password to encode: ")
-            encoded_password = encoder(int(password))
+            encoded_password = encoder((password))
             print("Your password has been encoded and stored!\n")
 
         elif menu_option == 2:
