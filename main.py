@@ -19,9 +19,7 @@ def encoder(password):
 
     return encoded_password
 
-
-if __name__ == "__main__":
-
+def main():
     while True:
         #menu
         print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n")
@@ -37,3 +35,7 @@ if __name__ == "__main__":
 
         if menu_option == 3:
             break
+        
+
+if __name__ == "__main__":
+    main()
