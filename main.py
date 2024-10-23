@@ -9,9 +9,10 @@ def encoder(password):
     original_password = str(password)
 
     #puts all numbers in password into list to make them easily iterable
-    while password > 0:
+    while password >= 0:
         list_digits.insert(0, password % 10)
         password = (password - password % 10) // 10
+
     
     #iterates through each number in password and increases by 3
     for digits in list_digits:
