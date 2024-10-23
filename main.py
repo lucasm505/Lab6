@@ -15,7 +15,11 @@ def encoder(password):
     
     #iterates through each number in password and increases by 3
     for digits in list_digits:
-        encoded_password += str(digits + 3)
+        var = 0
+        var += (digits + 3)
+        if var > 10:
+            var -= 10
+        encoded_password += str(var)
 
     return encoded_password
     
