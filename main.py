@@ -19,10 +19,9 @@ def encoder(password):
 def decode(encoded_password):
     decoded_pass = ''
     for digits in encoded_password:
-        decoded_pass += str(int(digits) - 3)
+        num = (int(digits) - 3) % 10
+        decoded_pass += str(num)
     return decoded_pass
-        
-    
 
 def main():
     encoded_password = ''
@@ -33,12 +32,14 @@ def main():
 
         if menu_option == 1:
             password = input("Please enter your password to encode: ")
-            encoded_password = encoder((password))
+            encoded_password = encoder(password)
             print("Your password has been encoded and stored!\n")
+            continue
 
         elif menu_option == 2:
             decoded_password = decode(encoded_password)
             print(f"The encoded password is {encoded_password}, and the original password is {decoded_password}.")
+            continue
 
         elif menu_option == 3:
             break
